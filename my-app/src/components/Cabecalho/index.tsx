@@ -1,10 +1,10 @@
 import Menu from "../Menu";
 
 export default function Cabecalho() {
-    return (
-        <header>
-            <h1>Meu Projeto</h1>
-            <Menu/>
-        </header>
-    );
-}   
+  return (
+    <header>
+        <h1>Meu Boiler Plate</h1>
+        <Menu/>
+    </header>
+  )
+}
