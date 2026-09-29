@@ -1,4 +1,11 @@
 
+export type TipoProduto = {
+    id:string;
+    nome:string;
+    preco:number;
+    estoque:number;
+}
+
 export type TipoUsuarioGit = {
     login:string;
     id:number;
@@ -20,3 +27,4 @@ export type TipoUsuarioGit = {
     user_view_type: string;
     site_admin: boolean;
 }
+
