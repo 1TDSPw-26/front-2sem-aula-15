@@ -7,19 +7,19 @@ import { RiDeleteBinLine as Excluir} from "react-icons/ri";
 export default function Produtos() {
 
     //Recipiente onde irei guardar a lista de produtos
-    const[produtos,setProduto] = useState<TipoProduto[]>([]);
+    const [produtos, setProduto] = useState<TipoProduto[]>([]);
 
-    useEffect( ()=>{
+    useEffect(() => {
 
-        const carregarProdutos = async ()=>{
+        const carregarProdutos = async () => {
             try {
                 const resposta = await fetch("http://localhost:3001/produtos");
 
-                if(!resposta.ok){
+                if (!resposta.ok) {
                     throw new Error(`Erro no fetch da resposta dos produtos: ${resposta.status} - ${resposta.statusText}`);
                 }
 
-                const data:TipoProduto[] = await resposta.json();
+                const data: TipoProduto[] = await resposta.json();
                 console.log(data);
                 setProduto(data);
 
@@ -31,12 +31,12 @@ export default function Produtos() {
 
         carregarProdutos();
 
-    },[]);
+    }, []);
 
     return (
         <main>
             <h2>Produtos</h2>
-            <table border={1} style={{width:"100%", borderCollapse:"collapse"}}>
+            <table border={1} style={{ width: "100%", borderCollapse: "collapse", borderColor: "#ff0000" }}>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -47,18 +47,18 @@ export default function Produtos() {
                     </tr>
                 </thead>
                 <tbody>
-                    {produtos.map( (p)=>(
+                    {produtos.map((p) => (
 
-                            <tr key={p.id}>
-                                <td>{p.id}</td>
-                                <td>{p.nome}</td>
-                                <td>{p.preco}</td>
-                                <td>{p.estoque}</td>
-                                <td>
-                                    <Link to={`/editar-produtos/${p.id}`}> <Editar/> </Link>  | 
-                                    <Link to="#" onClick={()=> confirm("Deseja realmente excluir?")}> <Excluir/> </Link>  | 
-                                </td>
-                            </tr>
+                        <tr key={p.id}>
+                            <td>{p.id}</td>
+                            <td>{p.nome}</td>
+                            <td>{p.preco}</td>
+                            <td>{p.estoque}</td>
+                            <td>
+                                <Link to={`/editar-produtos/${p.id}`}> <Editar /> </Link>  |
+                                <Link to="#" onClick={() => confirm("Deseja realmente excluir?")}> <Excluir /> </Link>  |
+                            </td>
+                        </tr>
                     ))}
                 </tbody>
                 <tfoot>
