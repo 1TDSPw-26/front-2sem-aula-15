@@ -1,14 +1,14 @@
 
 export type TipoProduto = {
-    id:string;
-    nome:string;
-    preco:number;
-    estoque:number;
+    id: string;
+    nome: string;
+    preco: number;
+    estoque: number;
 }
 
 export type TipoUsuarioGit = {
-    login:string;
-    id:number;
+    login: string;
+    id: number;
     node_id: string;
     avatar_url: string;
     gravatar_id: string;

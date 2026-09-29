@@ -19,7 +19,7 @@ type TipoUsuarioGit = {
     received_events_url: string;
     type: string;
     user_view_type: string;
-    site_admin:boolean;
+    site_admin: boolean;
 }
 
 
@@ -30,19 +30,19 @@ export default function Home() {
 
     const [usuarios, setUsuarios] = useState<TipoUsuarioGit[]>([]);
 
-    useEffect( ()=>{
+    useEffect(() => {
         //Função assíncrona
         async function loadingData() {
-            
+
             try {
                 const response = await fetch("https://api.github.com/users");
-                
-                if(!response.ok){
+
+                if (!response.ok) {
                     throw new Error("A listagem falhou!");
                 }
-                
-                const data:TipoUsuarioGit[] = await response.json();
-                
+
+                const data: TipoUsuarioGit[] = await response.json();
+
                 setUsuarios(data);
 
             } catch (error) {
@@ -60,8 +60,8 @@ export default function Home() {
             <h2>Home</h2>
             <div>
                 <ul>
-                    {usuarios.map( (u,i)=> (
-                        <li key={i}>{u.id} - {u.login} - <img src={u.avatar_url} alt={u.login} width={40}/></li>
+                    {usuarios.map((u, i) => (
+                        <li key={i}>{u.id} - {u.login} - <img src={u.avatar_url} alt={u.login} width={40} /></li>
                     ))}
                 </ul>
             </div>
