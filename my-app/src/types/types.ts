@@ -1,5 +1,4 @@
 
-
 export type TipoProduto = {
     id: string;
     nome: string;
