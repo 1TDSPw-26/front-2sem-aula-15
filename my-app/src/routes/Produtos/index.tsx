@@ -10,7 +10,7 @@ export default function Produtos() {
     const[produtos,setProduto] = useState<TipoProduto[]>([]);
 
     useEffect( ()=>{
-
+ 
         const carregarProdutos = async ()=>{
             try {
                 const resposta = await fetch("http://localhost:3001/produtos");
