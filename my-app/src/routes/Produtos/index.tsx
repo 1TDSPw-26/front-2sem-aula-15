@@ -36,7 +36,7 @@ export default function Produtos() {
     return (
         <main>
             <h2>Produtos</h2>
-            <table border={1} style={{width:"100%", borderCollapse:"collapse"}}>
+            <table border={1} style={{width:"100%", borderCollapse:"collapse", borderColor:"#ff0000"}}>
                 <thead>
                     <tr>
                         <th>ID</th>
